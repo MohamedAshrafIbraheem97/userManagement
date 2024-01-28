@@ -1,0 +1,38 @@
+@import "src/assets/variables";
+
+/* Customize border color for focused and unfocused states */
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+  color: $white-color !important; /* Change to your desired border color */
+  background-color: $white-color;
+}
+
+/* Customize text color for the input field */
+::ng-deep .mat-form-field-appearance-outline .mat-input-element {
+  color: $white-color !important; /* Change to your desired text color */
+  background-color: $white-color;
+}
+
+/* Customize placeholder color */
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-label {
+  color: $white-color !important; /* Change to your desired placeholder color */
+  background-color: $white-color;
+}
+
+::ng-deep {
+  .mat-form-field-appearance-outline .mat-form-field-outline {
+    color: white;
+  }
+  mat-form-field {
+    .mat-hint,
+    input,
+    ::placeholder,
+    .mat-form-field-label {
+      color: white;
+    }
+  }
+}
+
+.mat-mdc-form-field {
+  color: white;
+  border-color: $white-color;
+}

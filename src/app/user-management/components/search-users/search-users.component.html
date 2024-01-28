@@ -1,0 +1,8 @@
+<mat-form-field appearance="outline">
+  <input
+    matInput
+    (keyup)="applyFilter($event)"
+    placeholder="{{ 'searchItems' | translate }}"
+    #input
+  />
+</mat-form-field>

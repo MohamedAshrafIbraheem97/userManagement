@@ -1,0 +1,9 @@
+@import "../../../../assets/variables";
+
+.mdc-text-field:not(.mdc-text-field--disabled) .mdc-text-field__input {
+  color: $white-color !important;
+}
+
+.mdc-text-field--outlined .mdc-notched-outline {
+  border-color: green;
+}

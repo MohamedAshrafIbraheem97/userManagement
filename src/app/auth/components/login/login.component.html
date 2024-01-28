@@ -1,0 +1,45 @@
+<form
+  class="d-flex flex-column justify-content-center mt-5"
+  [formGroup]="loginForm"
+  (ngSubmit)="submitForm()"
+>
+  <mat-form-field appearance="outline">
+    <input
+      id="email"
+      matInput
+      type="email"
+      formControlName="email"
+      placeholder="Ex: Johndoe@example.com"
+      autocomplete="off"
+    />
+    <mat-error *ngIf="loginForm.get('email')?.hasError('required')">{{
+      "requiredField" | translate
+    }}</mat-error>
+    <mat-error *ngIf="loginForm.get('email')?.hasError('email')">
+      {{ "emailFormat" | translate }}
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <input
+      id="password"
+      matInput
+      type="password"
+      formControlName="password"
+      placeholder="Ex: ********"
+      autocomplete="off"
+    />
+    <mat-error *ngIf="loginForm.get('password')?.hasError('required')">
+      {{ "requiredField" | translate }}</mat-error
+    >
+  </mat-form-field>
+
+  <button
+    class="width-100 login-button"
+    mat-raised-button
+    color="primary"
+    [disabled]="loginForm.invalid"
+  >
+    {{ "login" | translate }}
+  </button>
+</form>

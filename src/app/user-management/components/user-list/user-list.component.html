@@ -1,0 +1,88 @@
+<div class="d-flex flex-wrap justify-content-between mb-2">
+  <app-search-users (filterValue)="updateDataSource($event)"></app-search-users>
+  <app-filter-users (filterValue)="updateDataSource($event)"></app-filter-users>
+  <app-export-users [dataToBeExported]="tableContainer"></app-export-users>
+
+  <button
+    class="text-white new-user"
+    [routerLink]="['../user']"
+    [queryParams]="{ mode: 'new' }"
+  >
+    <i class="fa fa-plus"></i>
+    {{ "newUser" | translate }}
+  </button>
+</div>
+<div class="table-container" #tableContainer id="dataToBeExported">
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <ng-container matColumnDef="fullName">
+      <th mat-header-cell *matHeaderCellDef>{{ "fullName" | translate }}</th>
+      <td mat-cell *matCellDef="let element">{{ element.fullName }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="emailAddress">
+      <th mat-header-cell *matHeaderCellDef>
+        {{ "emailAddress" | translate }}
+      </th>
+      <td mat-cell *matCellDef="let element">{{ element.email }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="location">
+      <th mat-header-cell *matHeaderCellDef>{{ "location" | translate }}</th>
+      <td mat-cell *matCellDef="let element">
+        <i class="fa fa-map-marker"></i>
+
+        {{ element.location }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="joinDate">
+      <th mat-header-cell *matHeaderCellDef>{{ "joinDate" | translate }}</th>
+      <td mat-cell *matCellDef="let element">
+        {{ element.joinDate | date : "M/dd/yyyy" }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="permission">
+      <th mat-header-cell *matHeaderCellDef>{{ "permission" | translate }}</th>
+      <td mat-cell *matCellDef="let element">
+        <span
+          [ngClass]="
+            element.permission === permissions.ADMIN
+              ? 'danger'
+              : element.permission === permissions.CONTRIBUTER
+              ? 'dark'
+              : 'bale'
+          "
+          >{{ element.permission }}</span
+        >
+      </td>
+    </ng-container>
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef>{{ "actions" | translate }}</th>
+      <td mat-cell *matCellDef="let row">
+        <a
+          mat-icon-button
+          color="primary"
+          [routerLink]="['../user', row.id]"
+          [queryParams]="{ mode: 'view' }"
+        >
+          <mat-icon>visibility</mat-icon>
+        </a>
+        <a
+          mat-icon-button
+          color="primary"
+          [routerLink]="['../user', row.id]"
+          [queryParams]="{ mode: 'edit' }"
+        >
+          <mat-icon>edit</mat-icon>
+        </a>
+        <a mat-icon-button color="primary" (click)="openDialog(row)">
+          <mat-icon>delete</mat-icon>
+        </a>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+</div>

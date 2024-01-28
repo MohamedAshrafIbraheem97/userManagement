@@ -1,0 +1,54 @@
+@import "../../../../assets/variables";
+
+.table-container {
+  position: relative;
+  min-height: 200px;
+  max-height: 400px;
+  overflow: auto;
+}
+
+@mixin layout {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 5.48425rem;
+  height: 1.8125rem;
+  flex-shrink: 0;
+  border-radius: 0.1875rem;
+  text-transform: lowercase;
+  color: $white-color;
+}
+
+.danger {
+  @include layout;
+  background-color: $danger;
+}
+
+.dark {
+  @include layout;
+
+  background-color: $dark-blue;
+}
+
+.bale {
+  @include layout;
+
+  background-color: $bale-blue;
+}
+
+.new-user {
+  display: flex;
+  width: 12rem;
+  height: 3.3125rem;
+  padding: 0.625rem 2.1875rem 0.625rem 1.875rem;
+  justify-content: space-between;
+  align-items: center;
+  flex-shrink: 0;
+  border-radius: 0.3125rem;
+  border: 2px solid rgba(112, 112, 112, 0.53);
+  background: linear-gradient(
+    250deg,
+    $secondary-color 0.76%,
+    $secondary-color-1 121.19%
+  );
+}

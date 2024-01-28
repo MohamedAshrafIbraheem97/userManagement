@@ -1,0 +1,65 @@
+<form
+  [formGroup]="userForm"
+  (ngSubmit)="submitForm()"
+  class="d-flex flex-column"
+>
+  <mat-form-field appearance="outline">
+    <input
+      matInput
+      formControlName="fullName"
+      type="text"
+      placeholder="{{ 'fullName' | translate }}"
+    />
+    <mat-error *ngIf="userForm.get('fullName')?.hasError('required')">
+      {{ "requiredField" | translate }}
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <input
+      matInput
+      formControlName="email"
+      type="email"
+      placeholder="{{ 'emailAddress' | translate }}"
+    />
+    <mat-error *ngIf="userForm.get('email')?.hasError('required')">
+      {{ "requiredField" | translate }}
+    </mat-error>
+    <mat-error *ngIf="userForm.get('email')?.hasError('email')">
+      {{ "emailFormat" | translate }}
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <input
+      matInput
+      formControlName="location"
+      type="text"
+      placeholder="{{ 'location' | translate }}"
+    />
+    <mat-error *ngIf="userForm.get('location')?.hasError('required')">
+      {{ "requiredField" | translate }}
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" subscriptSizing="dynamic">
+    <mat-select formControlName="permission">
+      <mat-option
+        *ngFor="let permission of permissions | keyvalue"
+        [value]="permission.value"
+      >
+        {{ permission.key }}
+      </mat-option>
+    </mat-select>
+    <mat-error *ngIf="userForm.get('permission')?.hasError('required')">
+      {{ "requiredField" | translate }}
+    </mat-error>
+  </mat-form-field>
+
+  <button
+    class="w-100 mt-2"
+    mat-raised-button
+    color="primary"
+    [disabled]="userForm.disabled || userForm.invalid"
+  >
+    {{ pageMode == "new" ? ("save" | translate) : ("update" | translate) }}
+  </button>
+</form>

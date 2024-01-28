@@ -1,0 +1,15 @@
+<mat-form-field appearance="outline">
+  <mat-select
+    #selectDropdown
+    (selectionChange)="applyFilter(selectDropdown.value)"
+    placeholder="{{ 'permission' | translate }}"
+  >
+    <mat-option>ALL</mat-option>
+    <mat-option
+      *ngFor="let permission of permissions | keyvalue"
+      [value]="permission.value"
+    >
+      {{ permission.key }}
+    </mat-option>
+  </mat-select>
+</mat-form-field>

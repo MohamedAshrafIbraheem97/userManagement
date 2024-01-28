@@ -1,0 +1,109 @@
+{
+  "users": [
+    {
+      "fullName": "aaaaaaaaaa",
+      "email": "asas@lk.com",
+      "location": " a'sdlajsdakn",
+      "avatar": "",
+      "joinDate": "Sun Jan 28 2024 02:43:15 GMT+0200 (Eastern European Standard Time)",
+      "permission": "CONTRIBUTER",
+      "id": "0d09"
+    },
+    {
+      "fullName": "asas",
+      "email": "lk@lk.com",
+      "location": "asas",
+      "avatar": "",
+      "joinDate": "Sat Jan 27 2024 23:24:43 GMT+0200 (Eastern European Standard Time)",
+      "permission": "ADMIN",
+      "id": "2bf2"
+    },
+    {
+      "fullName": "kajskajs",
+      "email": "ajshjahsjh@a.com",
+      "location": "jahsjhajsh",
+      "avatar": "",
+      "joinDate": "Sun Jan 28 2024 02:14:04 GMT+0200 (Eastern European Standard Time)",
+      "permission": "VIEWER",
+      "id": "eea6"
+    },
+    {
+      "id": "fab0",
+      "fullName": "mohamed",
+      "email": "mohamed@m.com",
+      "location": "helwan",
+      "avatar": "",
+      "joinDate": "Sun Jan 28 2024 02:12:05 GMT+0200 (Eastern European Standard Time)",
+      "permission": "CONTRIBUTER"
+    },
+    {
+      "id": "fe84",
+      "fullName": "محمد ا",
+      "email": "m@m.com",
+      "location": "حلوان",
+      "avatar": "",
+      "joinDate": "Sun Jan 28 2024 02:12:38 GMT+0200 (Eastern European Standard Time)",
+      "permission": "ADMIN"
+    },
+    {
+      "id": "6bee",
+      "fullName": "khan",
+      "email": "khan@khan.com",
+      "location": "ksa",
+      "avatar": "",
+      "joinDate": "Sun Jan 28 2024 02:22:06 GMT+0200 (Eastern European Standard Time)",
+      "permission": "CONTRIBUTER"
+    },
+    {
+      "id": "2caa",
+      "fullName": "ahmed",
+      "email": "ahmed@ahmed.com",
+      "location": "ahmed",
+      "avatar": "",
+      "joinDate": "Sun Jan 28 2024 02:33:51 GMT+0200 (Eastern European Standard Time)",
+      "permission": "ADMIN"
+    }
+  ],
+  "auth": [
+    {
+      "email": "a@a.com",
+      "password": "1234",
+      "id": "9b44"
+    },
+    {
+      "id": "28df",
+      "password": "0d1Ob><h",
+      "email": "AD112233@a.com"
+    },
+    {
+      "id": "68a6",
+      "password": "0d1Ob><h",
+      "email": "AD112233@a.com"
+    },
+    {
+      "id": "98dd",
+      "password": "0d1Ob><h",
+      "email": "AD112233@a"
+    },
+    {
+      "id": "0803",
+      "password": "0d1Ob><h",
+      "email": "AD112233@a"
+    },
+    {
+      "id": "35d3",
+      "password": "0d1Ob><h",
+      "email": "a@a.com"
+    },
+    {
+      "id": "ecb7",
+      "password": "0d1Ob><h",
+      "email": "AD112233@a"
+    },
+    {
+      "id": "8025",
+      "password": "0d1Ob><h",
+      "email": "aa@a.com"
+    }
+  ]
+}
